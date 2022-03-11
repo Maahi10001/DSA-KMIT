@@ -25,8 +25,6 @@ September 16, 2021 Bill Payment Due  on Sunday, October 31, 2021
 October 1, 2021 Bill Payment Due  on Sunday, October 31, 2021
 October 16, 2021 Bill Payment Due  on Sunday, October 31, 2021
 
-
-'''
 #solution incorrrect
 from datetime import datetime,timedelta
 import calendar
@@ -64,4 +62,18 @@ if __name__=="__main__":
     tempd2=y2+"-"+m2+"-"+d2
     check3=datetime.strptime(s2,'%d %m %Y').weekday()
     day2=calendar.day_name[check3]
-    print(getdt(int(d),int(m),int(y),n,day,s,int(d2),int(m2),int(y2),day2,s2,tempd,tempd2))
+    print(getdt(int(d),int(m),int(y),n,day,s,int(d2),int(m2),int(y2),day2,s2,tempd,tempd2))'''
+    #correct Solution
+    import datetime
+    if __name__=="__main__":
+        l=list(map(int,input().split('-')))
+        k=int(input())
+        date1=datetime.date(l[2],l[1],l[0])
+        date2=date1+datetime.timedelta(days=60)
+        y=date2.strftime('%A, %-B %-d, %Y')
+        a=int(60/k)
+        datetemp=date1
+        for i in range(a):
+            x=datetemp.strftime('%B %-d, %Y')
+            print(x,"Bill Payment Due on", y)
+            datetemp=datetemp+datetime.timedelta(days=k)
