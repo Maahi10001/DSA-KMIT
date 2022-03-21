@@ -32,7 +32,7 @@ Explanation:
 The sustring of length 12 is "122112122122".The count of 2's is 7.
 
 
-'''
+
 #solution
 
 def getcount(s):
@@ -42,4 +42,33 @@ if __name__=="__main__":
     st="1221121221221121122"
     s=st[0:n]
     s=list(s)
-    print(getcount(s)_
+    print(getcount(s)_'''
+def getcount(n):
+    count=2
+    x=1
+    if(n<=0):
+        return 0
+    if(n<=3):
+        return 2
+    a=[]
+    a.append(1)
+    a.append(2)
+    a.append(2)
+    i,j=3,2
+    while(i<n):
+        for z in range(a[j]):
+            a.append(x)
+            if x==2 and i<n: 
+                count+=1
+            i+=1
+        x=x^3
+        j+=1
+      #  if x==1:
+       #     x=2
+        #else:
+         #   x=1
+        #j+=1
+    return count
+#if name=="main":
+n=int(input())
+print(getcount(n))
