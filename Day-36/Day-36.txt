@@ -1,4 +1,4 @@
 March 23 2022
 program :- max gold
 p2:-maxpoints using sliding window approach
-p3:- printing pattern
+p3:- printing pattern solved all
