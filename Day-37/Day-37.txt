@@ -1,0 +1,3 @@
+program 1 was rearrnage the string based on given operation
+program 2 was ot print the pattern of numbers
+program 3 sliding window approach i thought.
