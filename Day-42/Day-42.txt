@@ -1,0 +1,3 @@
+Day 42 april 6th 
+p1:- sliding window or prefix sum
+p2:- two pointer approach
