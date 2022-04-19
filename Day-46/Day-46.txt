@@ -1,0 +1,5 @@
+Day -46 
+p1:- stack approach but not stack approach
+p2:- recursion
+p3:- linked list in c swappping
+GGG
