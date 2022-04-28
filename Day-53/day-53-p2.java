@@ -16,29 +16,56 @@ output = 13500
 */
 //soution
 import java.util.*;
-public class program
+public class Main
 {
 	public static void main(String[] args) {
 		String arr[][]=new String[5][3];
 		Scanner sc=new Scanner(System.in);
 		Thread t1=new Thread(new Runnable(){
-		    public void run(){
+		     public synchronized void run(){
+		 try{
 		  for(int i=0;i<5;i++)
             for(int j=0;j<3;j++)
                 arr[i][j]=sc.next();
+                
+                Thread.sleep(400);
 		    }
-		  }); //thread1 taking inputs for the array
+		    catch(Exception e){
+		        System.out.print(e);
+		    }
+		     
+		    }
+		
+		    
+		  });
 		
 		Thread t2=new Thread(new Runnable(){
 		    int count=0;
-		    public void run(){
-		   for(int i=0;i<5;i++)
+		   public synchronized void run(){
+		   try{
+		       for(int i=0;i<5;i++)
                 count=count+Integer.parseInt(arr[i][2]);
          
             System.out.println(count);
-		    }
-		    });  //thread2 suming up the array
-		t1.run();
-		t2.start();
+		    
+		    Thread.sleep(200);
+		   }
+		   catch(Exception e){
+		      System.out.print(e);
+		   }
+		   }
+		   
+		    });
+	     
+		try{t1.start(); 
+		    t1.join();
+		    
+		   t2.start();
+		   t2.join();
+		}
+		catch(Exception e){
+		    System.out.println(e);
+		}
 	}
 }
+
