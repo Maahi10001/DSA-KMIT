@@ -76,3 +76,22 @@ if __name__=="__main__":
     damage=list(map(int,input().split()))
     armor=int(input())
     print(min_health(n,damage,armor))
+    
+    
+    
+    
+    
+    def min_health(n,damage,armor):
+    maxi=max(damage)
+    summ=sum(damage)-maxi
+    if(armor<=maxi):
+        maxi=maxi-armor
+        res=summ+maxi
+        return res+1
+    elif(armor>maxi):
+        return summ+1
+if __name__=="__main__":
+    n=int(input())
+    damage=list(map(int,input().split()))
+    armor=int(input())
+    print(min_health(n,damage,armor))
