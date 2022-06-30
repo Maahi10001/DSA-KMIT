@@ -1,4 +1,4 @@
-/*
+'''
 Gopal is given a list of integers.
 Your task to is find out, the length of the longest subsequence that is a
 toggle sequence.
@@ -56,46 +56,20 @@ Given list of integers = 1 5 4 3 7 9 10
 the consecutive differences are [ 4, -1, -1, 4, 2, 1], 
 the differences are alternate +ve and -ve.
 So, there are more than one toggle sequences of length 4.
-*/
-import java.util.*;
-class Program{
-    public static int getLongestSequenceSize(int[] a,int n) {
-        int max=2;
-        int i=1;
-        if(n<2)
-            return 2;
-        while(i<n && a[i]==a[i-1])
-            i++;
-        if(i==n) 
-            return 1;
-        int flag=a[i]>a[i-1]?0:1;
-        while(i<n){
-            if(flag==1){
-                while(i<n && a[i]<=a[i-1])
-                    i++;
-                if(i<n) 
-                    max++;
-                flag=0;
-                
-            }
-            else{
-                while(i<n && a[i]>=a[i-1])
-                    i++;
-                if(i<n)
-                    max++;
-                flag=1;
-            }
-        }
+
+'''
+
+
+def WeirdSeries(nums):
+    up = 1
+    down = 1
         
-        return max;
-    }
-    public static void main(String[]args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int[]arr=new int[n];
-        for(int i=0;i<n;i++){
-            arr[i]=sc.nextInt();
-        }
-        System.out.println(getLongestSequenceSize(arr,n));
-    }
-}
+    for i in range(1, len(nums)):
+        if nums[i] - nums[i-1] > 0:
+            up = down + 1
+        elif nums[i] - nums[i-1] < 0:
+            down = up + 1
+    return max(down, up)
+if __name__ == '__main__':
+    nums=list(map(int,input().split()))
+    print(WeirdSeries(nums))
