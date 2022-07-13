@@ -69,3 +69,16 @@ class program{
     }
 }
 
+
+/*
+ to avoid over flow according to lc:-780
+ while(x>a&&y>b){
+        if(x>y) x%=y;
+        else y%=x;
+    }
+    if(a>x||b>y) return false;
+    if(a==x) return (y-b)%a==0;
+    if(b==y) return (x-a)%b==0;
+    return a==x&&b==y;
+    */
+
